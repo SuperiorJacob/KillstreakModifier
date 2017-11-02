@@ -38,67 +38,57 @@ KSM.Modifiers = {
 	{
 		display = "{name} just double killed!",
 		sound = "doublekill",
-		streak = 2,
-		func = function() end
+		streak = 2
 	},
 	{
 		display = "{name} just triple killed!",
 		sound = "triplekill",
-		streak = 3,
-		func = function() end
+		streak = 3
 	},
 	{
 		display = "{name} is on a killing spree!",
 		sound = "killingspree",
-		streak = 4,
-		func = function() end
+		streak = 4
 	},
 	{
 		display = "{name} is dominating with {kills} kills!",
 		sound = "dominating",
-		streak = 5,
-		func = function() end
+		streak = 5
 	},
 	{
 		display = "{name} is clearly unstoppable with {kills} kills!",
 		sound = "unstoppable",
-		streak = 6,
-		func = function() end
+		streak = 6
 	},
 	{
 		display = "{name} is on a MONSTER killing spree with {kills} kills!",
 		sound = "monsterkill",
-		streak = 7,
-		func = function() end
+		streak = 7
 	},
 	{
 		display = "{name} is on a ULTRA killing spree with {kills} kills!",
 		sound = "ultrakill",
-		streak = 8,
-		func = function() end
+		streak = 8
 	},
 	{
 		display = "{name} is on a MEGA killing spree with {kills} kills!",
 		sound = "megakill",
-		streak = 9,
-		func = function() end
+		streak = 9
 	},
 	{
 		display = "{name} is WICKED SICK with {kills} kills!",
 		sound = "wickedsick",
-		streak = 10,
-		func = function() end
+		streak = 10
 	},
 	{
 		display = "{name} is now GODLIKE with {kills} kills!",
 		sound = "godlike",
-		streak = 11,
-		func = function() end
+		streak = 11
 	},
 	{ -- The last killstreak on this table will be repeat if the streak is greater then this!
 		display = "{name} is RAMPAGING with {kills} kills!",
 		sound = "rampage",
 		streak = 12,
-		func = function() end
+		func = function( ply ) if IsValid( ply ) then ply:SetHealth( ply:Health() + 50 ) end end
 	},
 }
