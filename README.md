@@ -17,8 +17,8 @@ The function will run when the player reaches the streak, so its great to set po
 
 # Full Template
 {
-	display = "{name} is RAMPAGING with {kills} kills!", -- {name} is players name, {kills} is the current streak.
-	sound = "rampage", -- Sound abbreviation
+	display = "{name} is RAMPAGING with {kills} kills!",
+	sound = "rampage",
 	streak = 12, -- Current streak
-	func = function( ply ) if IsValid( ply ) then end end -- If you are using a function, remove if not!
+	func = function( ply ) if IsValid( ply ) then end end
 }
