@@ -16,9 +16,11 @@ This is simple when creating your own Kill Streak in KMS.Modifiers, insert a lin
 The function will run when the player reaches the streak, so its great to set points or do other things like buff the player, this addon has some endless possiblities so have fun!
 
 # Full Template
+```
 {
-	display = "{name} is RAMPAGING with {kills} kills!",
-	sound = "rampage",
-	streak = 12, -- Current streak
-	func = function( ply ) if IsValid( ply ) then end end
+	display = "{name} is RAMPAGING with {kills} kills!", -- {name} is the players name, {kills} is the streak.
+	sound = "rampage", -- Sound abbreviation
+	streak = 12, -- Streak the player must reach before this happens.
+	func = function( ply ) if IsValid( ply ) then ply:SetHealth( ply:Health() + 50 ) end end -- Functions (if using one)
 }
+```
