@@ -5,11 +5,6 @@
 --------------------------
 
 KSM = {}
-KSM.Messages = { 
-	Enabled = true, -- If false a players streak will only appear on the HUD.
-	Color = Color( 255, 75, 75 ), -- Chat color
-	Prefix = "[Killstreaks]" -- Chat Prefix for the advertisements (making it "" will remove the prefix!) 
-}
 -- {tablename} = {sound in Killstreakmodifier / sound}, now you can use the {tablename} as a reference. --
 -- Sounds must be wav files on a 44100HZ frequency --
 KSM.Sounds = { -- Sounds that are downloaded by the client.
