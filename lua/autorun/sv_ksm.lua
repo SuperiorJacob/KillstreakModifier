@@ -27,11 +27,17 @@ hook.Add( "PlayerDeath", "KillstreakModifierDeath", function( vic, inf, ply )
 				for _,p in pairs( player.GetAll() ) do
 					p:SendLua( send )
 				end
+				if v["func"] != nil then
+					v["func"]( ply )	
+				end
 				PrintMessage( HUD_PRINTCENTER, display )
 			elseif ( table.Count(KSM.Modifiers) == k ) then
 				if ply.streak >= v.streak then
 					for _,p in pairs( player.GetAll() ) do
 						p:SendLua( send )
+					end
+					if v["func"] != nil then
+						v["func"]( ply )	
 					end
 					PrintMessage( HUD_PRINTCENTER, display )
 				end
@@ -39,4 +45,3 @@ hook.Add( "PlayerDeath", "KillstreakModifierDeath", function( vic, inf, ply )
 		end
 	end
 end ) 
-
