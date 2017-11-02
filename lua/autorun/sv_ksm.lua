@@ -1,19 +1,14 @@
-AddCSLuaFile()
-AddCSLuaFile( "sh_ksm.lua" )
-
 include( "sh_ksm.lua" )
 
 if SERVER then
 	for k,v in pairs( KSM.Sounds ) do
-		resource.AddSingleFile( tostring(v) )
 		resource.AddSingleFile( "sound/"..tostring(v) )
-		resource.AddSingleFile( "killstreakmodifier/sound/"..tostring(v) )
 	end
 end
 
 hook.Add( "PlayerSpawn", "KillstreakModifierSpawn", function( ply ) ply.streak = 0 end )
 hook.Add( "PlayerDeath", "KillstreakModifierDeath", function( vic, inf, ply )
-	if vic != ply then
+	if vic != ply and ply:IsPlayer() then
 		ply.streak = ply.streak + 1
 
 		for k,v in pairs( KSM.Modifiers ) do
@@ -45,3 +40,4 @@ hook.Add( "PlayerDeath", "KillstreakModifierDeath", function( vic, inf, ply )
 		end
 	end
 end ) 
+
